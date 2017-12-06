@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>@ViewBag.Title</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/sb/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="~/Content/sb/css/sb-admin.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="~/Content/sb/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href=@Url.Action("Index", "Home")>MyCompany</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-user"></i> @User.Identity.Name</a>                    
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Профиль</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="@Url.Action("LogOff", "Account")"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#dashboard"><i class="fa fa-fw fa-dashboard"></i> MyCompany <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="dashboard" class="collapse">
+                            <li>
+                                @Html.ActionLink("Юр. Лица", "Index", "Entity")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Сотрудники", "Index", "User")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Склады", "Index", "Warhouse")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Контрагенты", "Index", "Conterparty")
+                            </li>
+                        </ul>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#retail"><i class="glyphicon glyphicon-usd"></i> Розница <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="retail" class="collapse">
+                            <li>
+                                @Html.ActionLink("Точки продаж", "Index", "Store")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Продажи", "Index", "Sellings")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Возвраты", "Index", "Returns")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Смены", "Index", "Shift")
+                            </li>
+                        </ul>
+                        <a href=@Url.Action("Index", "OrderIn")><i class="glyphicon glyphicon-download"></i> Заказы компании</a>
+                        <a href=@Url.Action("Index", "OrdersOut")><i class="glyphicon glyphicon-briefcase"></i> Заказы клиентов</a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#Warhouse"><i class="glyphicon glyphicon-barcode"></i> Склад <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="Warhouse" class="collapse">
+                            <li>
+                                @Html.ActionLink("Отгрузка", "Index", "Shipments")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Приход", "Index", "Returns")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Списание", "Index", "Loss")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Товары", "Index", "Good")
+                            </li>
+                            <li>
+                                @Html.ActionLink("Валюта", "Index", "Currency")
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            @ViewBag.Title
+                            
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href=@Url.Action("Index","Home")>Dashboard</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-file"></i> @ViewBag.Title
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+                <!-- /.row -->
+                <div>
+                    @RenderBody()
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <script src="~/Content/sb/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/scripts/jquery-1.10.2.js")
+    @Scripts.Render("~/scripts/jquery.unobtrusive-ajax.js")
+
+                     
+</body>
+
+</html>

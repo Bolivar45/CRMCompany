@@ -1,0 +1,114 @@
+﻿@model CRMCompany.Models.GoodModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GoodModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Conterparty.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Conterparty.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Articul)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Articul)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Measure)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Measure)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capasity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capasity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AutoOst)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AutoOst)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PriseIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriseIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PriseOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PriseOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

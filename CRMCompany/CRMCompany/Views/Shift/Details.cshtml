@@ -1,0 +1,106 @@
+﻿@model CRMCompany.Models.ShiftModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ShiftModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Currency.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Currency.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Entity.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Entity.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StoreId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StoreId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOpen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOpen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateClose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateClose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SummCash)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SummCash)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SummNonCash)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SummNonCash)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Summ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Summ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoneyIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoneyIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoneyOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoneyOut)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

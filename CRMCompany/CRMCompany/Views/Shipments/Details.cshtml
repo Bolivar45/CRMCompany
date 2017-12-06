@@ -1,0 +1,82 @@
+﻿@model CRMCompany.Models.Shipment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Shipment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Conterparty.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Conterparty.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.good.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.good.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Warhouse.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Warhouse.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOpen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOpen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prise)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Summ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Summ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
